@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN" "http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<from>^.*\.(js|css|gif)$</from>
+		<set type="expires">24 hours</set>
+	</rule>
+	<rule>
+		<from>/robots.txt</from>
+		<to>robots.htm</to>
+	</rule>
+	<rule>
+		<from>/sitemap.xml</from>
+		<to>sitemap.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/categories-sitemap.xml</from>
+		<to>categories_sitemap.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap-news.xml</from>
+		<to>post_sitemap_news.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap-news([0-9-]+).xml</from>
+		<to>post_sitemap_news.htm?p=$1</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap-dreams.xml</from>
+		<to>post_sitemap_dreams.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap-dreams([0-9-]+).xml</from>
+		<to>post_sitemap_dreams.htm?p=$1</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap.xml</from>
+		<to>post_sitemap.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/post-sitemap-([0-9-]+).xml</from>
+		<to>post_sitemap.htm?year=$1</to>
+	</rule>
+	
+	<!-- ket qua xo so theo ngay -->
+	<rule>
+		<from>/trang-chu.html</from>
+		<to>index.htm</to>
+	</rule>
+
+	<rule>
+		<from>/xsmb-xo-so-mien-bac.html</from>
+		<to>index_mb.htm</to>
+	</rule>
+
+	<rule>
+		<from>/xsmt-xo-so-mien-trung.html</from>
+		<to>index_mt.htm</to>
+	</rule>
+
+	<rule>
+		<from>/xsmn-xo-so-mien-nam.html</from>
+		<to>index_mn.htm</to>
+	</rule>
+
+	<rule>
+		<from>/xsmn-([a-z]+)-([a-z0-9-]+).html</from>
+		<to>xsmn_thu.htm?thu=$2</to>
+	</rule>
+
+	<rule>
+		<from>/xsmt-([a-z]+)-([a-z0-9-]+).html</from>
+		<to>xsmt_thu.htm?thu=$2</to>
+	</rule>
+
+	<rule>
+		<from>/xsmb-([a-z]+)-([a-z0-9-]+).html</from>
+		<to>xsmb_thu.htm?thu=$2</to>
+	</rule>
+
+	<rule>
+		<from>/du-doan/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/du-doan/([0-9-]+).html</from>
+		<to>/tintuc.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/du-doan.html</from>
+		<to>/tintuc.htm</to>
+	</rule>
+
+	<!-- chua check dc url_ca cho meta-->
+	<rule>
+		<from>/du-doan-([a-z0-9-]+)/([0-9-]+).html</from>
+		<to>/tintuc.htm?categoryNews=$1&amp;p=$2</to>
+	</rule>
+	
+	<rule>
+		<from>/du-doan-([a-z0-9-]+).html</from>
+		<to>/tintuc.htm?categoryNews=$1</to>
+	</rule>
+
+	<rule>
+		<from>/so-mo-lo-de/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_dream.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/so-mo-lo-de/([0-9-]+).html</from>
+		<to>/somo.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/so-mo-lo-de.html</from>
+		<to>/somo.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/thong-ke-2-so-cuoi-giai-dac-biet/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news_db.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-2-so-cuoi-giai-dac-biet/([0-9-]+).html</from>
+		<to>/news_db.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-2-so-cuoi-giai-dac-biet.html</from>
+		<to>/news_db.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/soi-cau-888/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news_888.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-888/([0-9-]+).html</from>
+		<to>/news_888.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-888.html</from>
+		<to>/news_888.htm</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-99/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news_99.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-99/([0-9-]+).html</from>
+		<to>/news_99.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-99.html</from>
+		<to>/news_99.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/soi-cau-mb/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news_scmb.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-mb/([0-9-]+).html</from>
+		<to>/news_scmb.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-mb.html</from>
+		<to>/news_scmb.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/soi-cau-xsmb-chinh-xac-nhat/([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/detail_news_scmb_chinhxac.htm?sid=$2&amp;id=$2</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-xsmb-chinh-xac-nhat/([0-9-]+).html</from>
+		<to>/news_scmb_chinhxac.htm?p=$1</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-xsmb-chinh-xac-nhat.html</from>
+		<to>/news_scmb_chinhxac.htm</to>
+	</rule>
+	
+	<rule>
+		<from>/quay-thu-([a-z0-9-]+).html</from>
+		<to>/quaythu.htm?code=$1</to>
+	</rule>
+	<rule>
+		<from>/kqxs-([0-9-]+).html</from>
+		<to>/kqxs_ngay.htm?d=$1</to>
+	</rule>
+
+	<rule>
+		<from>/xsmb-([0-9-]+).html</from>
+		<to>/xsmb_ngay.htm?d=$1</to>
+	</rule>
+
+	<rule>
+		<from>/xsmt-([0-9-]+).html</from>
+		<to>/xsmt_ngay.htm?d=$1</to>
+	</rule>
+
+	<rule>
+		<from>/xsmn-([0-9-]+).html</from>
+		<to>/xsmn_ngay.htm?d=$1</to>
+	</rule>
+	
+	<rule>
+		<from>/xs([a-z0-9-]+)-([0-9-]+).html</from>
+		<to>/xstinh_ngay.htm?province=$1&amp;d=$2</to>
+	</rule>
+
+	<rule>
+		<from>/404.html</from>
+		<to>404.htm</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-giai-dac-biet.html</from>
+		<to>thongkedacbiet.htm</to>
+	</rule>
+
+	<rule>
+		<from>/([a-z0-9-]+)-ket-qua-xo-so-([a-z0-9-]+).html</from>
+		<to>/xs_tinh.htm?province=$1</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-bach-thu.html</from>
+		<to>/soicau.htm?type=1</to>
+	</rule>
+
+	<rule>
+		<from>/cau-lat-lien-tuc.html</from>
+		<to>/soicau.htm?type=2</to>
+	</rule>
+
+	<rule>
+		<from>/cau-ve-nhieu-nhay.html</from>
+		<to>/soicau.htm?type=3</to>
+	</rule>
+
+	<rule>
+		<from>/cau-ve-ca-cap.html</from>
+		<to>/soicau.htm?type=4</to>
+	</rule>
+
+	<rule>
+		<from>/soi-cau-([a-z0-9-]+).html</from>
+		<to>/soicaucactinh.htm?code=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-lo-gan.html</from>
+		<to>/thongkelogan.htm</to>
+	</rule>
+	<rule>
+		<from>/thong-ke-lo-gan-([a-z0-9-]+).html</from>
+		<to>/thongkelogan.htm?code=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-00-99.html</from>
+		<to>//thongke_00_99.htm</to>
+	</rule>
+	<rule>
+		<from>/thong-ke-00-99-([a-z0-9-]+).html</from>
+		<to>/thongke_00_99.htm?code=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-lo-xien.html</from>
+		<to>//thongke_lo_xien.htm</to>
+	</rule>
+	<rule>
+		<from>/thong-ke-lo-xien-([a-z0-9-]+).html</from>
+		<to>/thongke_lo_xien.htm?code=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-lo-kep.html</from>
+		<to>//thongke_lo_kep.htm</to>
+	</rule>
+	<rule>
+		<from>/thong-ke-lo-kep-([a-z0-9-]+).html</from>
+		<to>/thongke_lo_kep.htm?code=$1</to>
+	</rule>
+
+	<rule>
+		<from>/thong-ke-tan-suat-lo-to.html</from>
+		<to>//thongke_tan_suat.htm</to>
+	</rule>
+	<rule>
+		<from>/thong-ke-tan-suat-lo-to-([a-z0-9-]+).html</from>
+		<to>/thongke_tan_suat.htm?code=$1</to>
+	</rule>
+</urlrewrite>
+

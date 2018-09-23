@@ -1,0 +1,17 @@
+.footer{
+    width: 100%;
+    background: #2363B2;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+}
+.footer a{
+    color: white;
+    text-decoration: underline;                
+}
+.container{
+    padding-bottom: 20px;
+}

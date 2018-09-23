@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+*, html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration:none; list-style:none; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:12px; color:#695110;}
+
+ol, ul { /*list-style: none;*/ }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles!*/
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* clear fix */
+.clearfix:after { content: "."; display: block; clear: both;  visibility: hidden; line-height: 0; height: 0; }
+
+.clearfix { display: inline-block;height: 40px }
+
+html[xmlns] .clearfix { display: block; }
+
+* html .clearfix { height: 1%; }
+
+body {}
+.container{}
+.header{}
+.header .nav_top{ height:45px; background-color:#2363B2; padding:0 3px;}
+.header .nav_top .logo{ display:block; float:left; height:45px; color:#fff; line-height:45px;font-weight:bold;}
+.header .nav_top ul{}
+.header .nav_top ul li{ display:inline; float:left; position:relative;}
+.header .nav_top ul li a{ display:block; float:left; color:#fff; height:45px; line-height:45px; padding:0 10px; transition:all 0.5s;font-weight: bold;}
+.header .nav_top ul li a:hover{color: gold}
+.header .nav_top ul li a:active{transition:none;}
+.header .nav_top ul li .nav_sub{ position:absolute; top:45px; left:0; background-color:#2363B2; width:auto; display:none;}
+.header .nav_top ul li:hover .nav_sub{ display:block;}
+.header .nav_top ul li .nav_sub ul{ width:175px; float:left;}
+.header .nav_top ul li .nav_sub ul li{}
+.header .nav_top ul li .nav_sub ul li a{ height:35px; line-height:35px; width:120px; background-image:url(../images/bg_navsub.png); background-repeat:no-repeat; background-position:-15PX center; border-bottom:solid 1px #2363B2;}
+.header .nav_top ul li .nav_sub ul li:last-child a{ border:none;}
+.header .nav_top ul li .nav_sub ul li a:hover{ background-position:5PX center;}
+
+.header .nav_top .user p{ line-height:40px; color:#fff;}
+.header .nav_top .user p a{ color:#fff; padding:0 0 0 10px;}
+.header .nav_top .user p a:hover{ text-decoration:underline;}
+.content{ padding:35px 20px 0;}
+.content .formWrapper{ margin:0 0 35px;text-align: center;}
+.content .formWrapper h1{ font-size:18px; margin:0 0 10px;}
+.content .formWrapper .form1{ margin:0 0 10px;}
+.content .formWrapper .form1 input{ display:block; margin:0 3px 0 0; padding:0; float:left; width:143px; height:23px; border:solid 1px #0b9444; padding:0 15px; font-weight:bold;}
+.content .formWrapper  select{ display:block; margin:0 3px 0 0; padding:0; float:left; border:solid 1px #0b9444; width:145px; height:25px; font-weight:bold;}
+.content .formWrapper .form1 label{float: left;margin-top: 4px;margin-right: 5px;margin-left: 5px;}
+.content .formWrapper .form1 input.btnSubmid{ height:25px; width:85px; background-color:#0b9444; color:#fff; cursor:pointer; border:none;}
+.content .formWrapper .form1 input.btnSubmid:hover{ background-color:#15a451;}
+.content .formWrapper .form1 input.btnSubmid:active{ background-color:#008035;}
+input.btnSubmid{ height:25px; width:105px; background-color:#0b9444; color:#fff; cursor:pointer; border:none;}
+input.btnSubmid:hover{ background-color:#15a451;}
+input.btnSubmid:active{ background-color:#008035;}
+.content table.info{ border-left:solid 1px #cdbfb6; border-bottom:solid 1px #cdbfb6;}
+.content table.info tr td{ border-top:solid 1px #cdbfb6; border-right:solid 1px #cdbfb6; padding:10px;}
+.content table.info tr:first-child td{ background-color:#cdbfb6; border-right:solid 1px #fff; color:#fff; font-weight:bold; font-size:14px;text-align: center}
+.content table.info tr:first-child td:last-child{ border-right:solid 1px #cdbfb6;}
+.navigation{text-align: right;margin-bottom: 50px;}
+.content .navigation select,.navigation select{float: none;display: inline-table; margin: 10px 0 0 0; padding:0; border:solid 1px #0b9444; width:145px; height:25px; font-weight:bold;}
+.txtCenter{text-align: center;vertical-align: top;}
+.txtLeft{text-align: left}
+.txtRight{text-align: right}
+span.require{color: red;}
+.table-auto{margin: auto; border: 0;}
+.table-auto tr td{text-align: left;margin: 10px; height: 30px; min-width: 100px;vertical-align: top;}
+.table-left{margin-left: 150px; border: 0;line-height: 50px;}
+.table-left tr td{text-align: left;margin: 10px; height: 30px; width: 150px;}
+input.txtbox-short {width:122px;}
+input.txtbox-middle {width:190px; border: 1px solid #0b9444;height: 30px; width: 205px; padding-left: 8px;margin-right: 10px}
+input.txtbox-long, form.middle-forms fieldset ol li textarea {width:305px}
+.title{font-family:Gotham;font-size: 20px;text-align:center;height: 30px; width: 100%; line-height: 30px;margin-top: 20px}
+.txtbox-select{display: block;height: 30px; width: 205px;border: 1px #0b9444 solid;}
+.table-content{margin:0 auto; }
+.table-content tr{border: 1px black solid}
+.table-content tr td{border: 1px black solid;height: 30px; width: 200px; line-height: 30px}
+.select{border: 1px solid #0b9444; width: 205px; line-height: 32px; height: 32px;font-weight: bold}
+.btnRight{float: right}
+input.button{display: block; width: 100%; height: 25px;background-color: #0b9444}
+input.button:hover{background-color: #15a451}
+input.button:active{background-color: #008035}
+a.linkbuttion{display: block;width: 100px; height: 25px;  background-color:#0b9444; line-height: 25px; text-align: center;color: white }
+a.linkbuttion:hover{ background-color:#15a451;}
+a.linkbuttion:active{ background-color:#008035;}
+.content table.tbseach{border: none}
+.content table.tbseach tr td{border: none;width: 200px }
+.messges{display: block;height: 30px;text-align: center;line-height: 30px; color: red}
+.success{display: block;height: 30px;text-align: center;line-height: 30px; color: green}
+a{cursor: pointer}
+.action a{text-decoration: underline}
+.tbl_header{ background-color: #cdbfb6;color: #fff;font-size: 14px;font-weight: bold;text-align: center;}
+a{cursor: pointer}
+.content .formWrapper .form1 form table tr td input{ display:block; margin:0 3px 0 0; padding:0; float:left; width:143px; height:23px; border:solid 1px #0b9444; padding:0 15px; font-weight:bold;}
+textarea.txtbox-middle {border: 1px solid #0b9444;padding-left: 8px;}
+.click-popup{color:#217FA7;cursor: pointer}
+table.table-popup {
+    line-height: 28px;
+    font-family: inherit;
+    padding: 8px 8px 8px 20px;
+    width: 500px;
+    text-align: left;
+    border: 0px none;
+    background-color: #F9F9F9;
+    font-size: 12px;
+    margin: auto;
+}
+table.table-popup, table.table-popup tr, table.table-popup td {
+    border-bottom: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+}
+table {
+    border-collapse: collapse;
+}
+table.table-popup tr td.right{
+    color: #217FA7;
+}
+table.table-popup td {
+    text-align: left;
+    padding-left: 20px;
+}
+.lbl{display: block;width: 100px; height: 30px; line-height: 30px}
+.content-left{float: left;width: 12%;}
+.content-right{float: right; width: 85%}
+.tbl-menu{width: 100%;}
+.tbl-menu td a{display: block;padding: 5px}
+.tbl-menu td a:hover{background: #15a451;color: white;} 
+.tbl-menu .tbl-header{background: #0B9444;}
+.tbl-menu .tbl-header td{font-weight: bold;color: white;padding: 5px}
+.require{color: red}
+.btnCMS{
+    background: green;
+    color: white;
+    padding: 8px;
+    display: block;
+    width: 80px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.container{min-width: 1300px;}

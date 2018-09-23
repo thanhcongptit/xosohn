@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+    <!-- 
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+            </props>
+        </property>
+    </bean>
+    -->
+   <!--  <context:component-scan base-package="com.soicaupro.controller" /> -->
+    
+    <bean id="facadeMonitoringAdvisor" class="net.bull.javamelody.MonitoringSpringAdvisor">
+	    <property name="pointcut">
+	        <bean class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+	            <property name="pattern" value=".*Controller.*" />
+	        </bean>
+	    </property>
+	</bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    -->  
+    <bean class="inet.controller.IndexController" name="/index.htm"/>
+    <bean class="inet.controller.IndexMBController" name="/index_mb.htm"/>
+    <bean class="inet.controller.IndexMTController" name="/index_mt.htm"/>
+    <bean class="inet.controller.IndexMNController" name="/index_mn.htm"/>
+    <bean class="inet.controller.XSMbThuController" name="/xsmb_thu.htm"/>
+    <bean class="inet.controller.XSMtThuController" name="/xsmt_thu.htm"/>
+    <bean class="inet.controller.XSMnThuController" name="/xsmn_thu.htm"/>
+    <bean class="inet.controller.XSTinhController" name="/xs_tinh.htm"/>
+    <bean class="inet.controller.KQXSNgayController" name="/kqxs_ngay.htm"/>
+    <bean class="inet.controller.XSMTNgayController" name="/xsmt_ngay.htm"/>
+    <bean class="inet.controller.XSMBNgayController" name="/xsmb_ngay.htm"/>
+    <bean class="inet.controller.XSMNNgayController" name="/xsmn_ngay.htm"/>
+    <bean class="inet.controller.XSTinhNgayController" name="/xstinh_ngay.htm"/>
+    <bean class="inet.controller.ErrorController" name="/404.htm"/>
+    
+    <bean class="inet.controller.SomoController" name="/somo.htm"/>
+    <bean class="inet.controller.DetailDreamController" name="/detail_dream.htm"/>
+    
+    <bean class="inet.controller.NewsDBController" name="/news_db.htm"/>
+    <bean class="inet.controller.DetailNewsDBController" name="/detail_news_db.htm"/>
+    
+    <bean class="inet.controller.News888Controller" name="/news_888.htm"/>
+    <bean class="inet.controller.DetailNews888Controller" name="/detail_news_888.htm"/>
+    
+    <bean class="inet.controller.News99Controller" name="/news_99.htm"/>
+    <bean class="inet.controller.DetailNews99Controller" name="/detail_news_99.htm"/>
+    
+    <bean class="inet.controller.NewsSCMBController" name="/news_scmb.htm"/>
+    <bean class="inet.controller.DetailNewsSCMBController" name="/detail_news_scmb.htm"/>
+    
+    <bean class="inet.controller.NewsSCMBChinhXacController" name="/news_scmb_chinhxac.htm"/>
+    <bean class="inet.controller.DetailNewsSCMBChinhXacController" name="/detail_news_scmb_chinhxac.htm"/>
+    
+    <!-- Quay truc tiep -->
+    <bean class="inet.controller.BuildXSLiveController" name="/ajax/live.htm"/>
+    <bean class="inet.controller.BuildXS_MTLiveController" name="/ajax/live_mt.htm"/>
+    <bean class="inet.controller.BuildXS_MNLiveController" name="/ajax/live_mn.htm"/>
+    <bean class="inet.controller.BuildXS_TinhLiveController" name="/ajax/live_tinh.htm"/>
+    
+    <!-- thong ke -->
+    <bean class="inet.controller.ThongKeDBController" name="/thongkedacbiet.htm"/>
+    <bean class="inet.controller.ThongKeLoGanController" name="/thongkelogan.htm"/>
+    <bean class="inet.controller.ThongKe00_99Controller" name="/thongke_00_99.htm"/>
+    <bean class="inet.controller.ThongKeTanSuatController" name="/thongke_tan_suat.htm"/>
+    <bean class="inet.controller.ThongKeLoXienController" name="/thongke_lo_xien.htm"/>
+    <bean class="inet.controller.ThongKeLoKepController" name="/thongke_lo_kep.htm"/>
+    
+    <!-- thongkedb_ajax -->
+    <bean class="inet.controller.ThongKeDBThangController" name="/thongke/db_thang.htm"/>
+    <bean class="inet.controller.ThongKeDBWeekController" name="/thongke/db_week.htm"/>
+    <bean class="inet.controller.ThongKeDBYearController" name="/thongke/db_year.htm"/>
+    
+    <!-- soicau -->
+    <bean class="inet.controller.SoiCauController" name="/soicau.htm"/>
+    <bean class="inet.controller.SoiCauCacTinhController" name="/soicaucactinh.htm"/>
+    <bean class="inet.controller.SoiCauChiTietController" name="/soicauchitiet.htm"/>
+    <bean class="inet.controller.SoiCauChiTietMTController" name="/soicauchitiet_mt.htm"/>
+    
+    <!-- tintuc -->
+    <bean class="inet.controller.TinTucController" name="/tintuc.htm"/>
+    <bean class="inet.controller.DetailNewsController" name="/detail_news.htm"/>
+    
+    <!-- quay thu -->
+    <bean class="inet.controller.QuayThuController" name="/quaythu.htm"/>
+    
+    <!-- admin -->
+    <bean class="xs.controller.admin.AdminController" name="/admin/index.htm"/>
+    <bean class="xs.controller.admin.AdminKQXSController" name="/admin/kqxs/index.htm"/>
+    <bean class="xs.controller.admin.AdminSaveKQXSController" name="/admin/kqxs/save.htm"/>
+    <bean class="xs.controller.admin.AdminLoginController" name="/admin/login/index.htm"/>
+    <bean class="xs.controller.admin.AdminLogoutController" name="/admin/login/logout.htm"/>
+    <bean class="xs.controller.admin.NewsController" name="/admin/news/index.htm"/> 
+    <bean class="xs.controller.admin.AdminChangePassController" name="/admin/change-pass.htm"/>  
+    <bean class="xs.controller.admin.AdminQuanTriController" name="/admin/quan-tri/index.htm"/>  
+    <bean class="xs.controller.admin.AdminCreateController" name="/admin/quan-tri/create.htm"/>  
+    <bean class="xs.controller.admin.AdminUpdateController" name="/admin/quan-tri/update.htm"/>  
+    <bean class="xs.controller.admin.NewsCreateController" name="/admin_news_create.htm"/>  
+    <bean class="xs.controller.admin.NewsUpdateController" name="/admin_news_update.htm"/>  
+    <bean class="xs.controller.admin.BannerController" name="/admin/banner/index.htm"/>  
+    <bean class="xs.controller.admin.BannerUpdateController" name="/admin/banner/update.htm"/>  
+    <bean class="xs.controller.admin.QuanlyLinkController" name="/admin/quan-ly-link-quangcao.htm"/>
+    <bean class="xs.controller.admin.QuanlyXoSoController" name="/admin/quan-ly-du-doan-xoso.htm"/>
+    <bean class="xs.controller.admin.AdminLinkCreateController" name="/admin/link/create.htm"/>
+    <bean class="xs.controller.admin.AdminXosoCreateController" name="/admin/xoso/create.htm"/>  
+    <bean class="xs.controller.admin.MN_MT_Controller" name="/admin/kqxs/kqxs_mt_mn.htm"/>
+    <bean class="xs.controller.admin.AdminSaveMTMNController" name="/admin/kqxs/save_mt_mn.htm"/>
+
+    <bean class="xs.controller.admin.QuanlyTextController" name="/admin/quan-ly-text.htm"/>
+    <bean class="xs.controller.admin.TextUpdateController" name="/admin/text/update.htm"/> 
+    <bean class="xs.controller.admin.MetaController" name="/admin/meta/index.htm"/> 
+    <bean class="xs.controller.admin.MetaCreateController" name="/admin/meta/create.htm"/>  
+    <bean class="xs.controller.admin.MetaUpdateController" name="/admin/meta/update.htm"/> 
+    
+    <bean class="xs.controller.admin.DreamController" name="/admin/dream/index.htm"/> 
+    <bean class="xs.controller.admin.DreamCreateController" name="/admin_dream_create.htm"/>  
+    <bean class="xs.controller.admin.DreamUpdateController" name="/admin_dream_update.htm"/> 
+    
+    <bean class="xs.controller.admin.NewsDBController" name="/admin/news_db/index.htm"/> 
+    <bean class="xs.controller.admin.NewsDBCreateController" name="/admin_news_db_create.htm"/>  
+    <bean class="xs.controller.admin.NewsDBUpdateController" name="/admin_news_db_update.htm"/> 
+    
+    <bean class="xs.controller.admin.News888Controller" name="/admin/news_888/index.htm"/> 
+    <bean class="xs.controller.admin.News888CreateController" name="/admin_news_888_create.htm"/>  
+    <bean class="xs.controller.admin.News888UpdateController" name="/admin_news_888_update.htm"/> 
+    
+    <bean class="xs.controller.admin.News99Controller" name="/admin/news_99/index.htm"/> 
+    <bean class="xs.controller.admin.News99CreateController" name="/admin_news_99_create.htm"/>  
+    <bean class="xs.controller.admin.News99UpdateController" name="/admin_news_99_update.htm"/>
+    
+    <bean class="xs.controller.admin.NewsSCMBController" name="/admin/news_scmb/index.htm"/> 
+    <bean class="xs.controller.admin.NewsSCMBCreateController" name="/admin_news_scmb_create.htm"/>  
+    <bean class="xs.controller.admin.NewsSCMBUpdateController" name="/admin_news_scmb_update.htm"/>
+    
+    <bean class="xs.controller.admin.NewsSCMBChinhXacController" name="/admin/news_scmb_chinhxac/index.htm"/> 
+    <bean class="xs.controller.admin.NewsSCMBChinhXacCreateController" name="/admin_news_chinhxac_create.htm"/>  
+    <bean class="xs.controller.admin.NewsSCMBChinhXacUpdateController" name="/admin_news_scmb_chinhxac_update.htm"/>
+     
+    <!-- SEO -->
+    <bean class="inet.controller.SiteMapController" name="/sitemap.htm"/>
+    <bean class="inet.controller.CategoriesSiteMapController" name="/categories_sitemap.htm"/>
+    <bean class="inet.controller.SiteMapNewsController" name="/post_sitemap_news.htm"/>
+    <bean class="inet.controller.SiteMapDreamsController" name="/post_sitemap_dreams.htm"/>
+    <bean class="inet.controller.SiteMapPostController" name="/post_sitemap.htm"/>
+    <bean class="inet.controller.RobotsController" name="/robots.htm"/>
+</beans>

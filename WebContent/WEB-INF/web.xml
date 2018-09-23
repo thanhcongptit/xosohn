@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+    	classpath:net/bull/javamelody/monitoring-spring.xml
+    	/WEB-INF/applicationContext.xml
+    </param-value>
+  </context-param>
+  
+  <filter>
+    <filter-name>monitoring</filter-name>
+    <filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>monitoring</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>net.bull.javamelody.SessionListener</listener-class>
+  </listener>
+  <!-- <listener>
+    <listener-class>inet.listener.AdvantiseCache</listener-class>
+  </listener> -->
+   <listener>
+    <listener-class>inet.listener.CrawlerDataLive</listener-class>
+  </listener>
+  
+  <context-param>
+    <param-name>buffer_folder</param-name>
+    <param-value>ajax</param-value>
+  </context-param>
+  
+  <filter>
+    <filter-name>trimFilter</filter-name>
+    <filter-class>inet.trimfilter.ReplaceHTMLFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>trimFilter</filter-name>
+    <url-pattern>*.htm</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <filter-class>
+            org.tuckey.web.filters.urlrewrite.UrlRewriteFilter
+        </filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+<filter>
+    <filter-name>cache</filter-name>
+    <filter-class>inet.filter.CacheFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>cache</filter-name>
+    <url-pattern>*.html</url-pattern>
+</filter-mapping>
+
+<filter>
+    <filter-name>cache1</filter-name>
+    <filter-class>inet.filter.CacheFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>cache1</filter-name>
+    <url-pattern>*.htm</url-pattern>
+</filter-mapping>
+	
+  <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>inet.listener.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/hinh-anh-tin-tuc/*</url-pattern>
+  </servlet-mapping>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.htm</location>
+  </error-page>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>/index.jsp</welcome-file>
+    <welcome-file>/index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>LoginAdminFilter</filter-name>
+    <filter-class>xs.filter.LoginAdminFilter</filter-class>
+    <init-param>
+      <param-name>my-param</param-name>
+      <param-value>my-param-value</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginAdminFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+    <url-pattern>/admin*</url-pattern>
+  </filter-mapping>
+  
+  <context-param>
+    <param-name>banners.dir</param-name>
+    <param-value>banners</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news.dir</param-name>
+    <param-value>news</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news_db.dir</param-name>
+    <param-value>news_db</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news_888.dir</param-name>
+    <param-value>news_888</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news_99.dir</param-name>
+    <param-value>news_99</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news_scmb.dir</param-name>
+    <param-value>news_scmb</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>news_scmb_chinhxac.dir</param-name>
+    <param-value>news_scmb_chinhxac</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>dreams.dir</param-name>
+    <param-value>dreams</param-value>
+  </context-param>
+  
+</web-app>
